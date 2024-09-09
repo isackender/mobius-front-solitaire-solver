@@ -384,12 +384,12 @@ def perform_moves(state):
 # ----------------------------------------------------------------------- top-level logic
 # -----------------------------------------------------------------------
 
-if not preferred_window_pos:
-    read_window_pos()
+if __name__ == '__main__':
+    if not preferred_window_pos:
+        read_window_pos()
 
-max_state = calculate() # kill with ^C
-max_state.cleanup()
+    max_state = calculate() # kill with ^C
+    max_state.cleanup()
 
-print('Finished search, performing...')
-perform_moves(max_state)
-
+    print('Finished search, performing...')
+    perform_moves(max_state)
